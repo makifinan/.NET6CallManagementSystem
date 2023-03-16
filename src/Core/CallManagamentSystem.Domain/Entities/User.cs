@@ -15,9 +15,7 @@ namespace CallManagamentSystem.Domain.Entities
 		public string TelNo { get; set; }
 
 
-		//Relations
-		public int AuthorityId { get; set; }
-		public virtual Authority Authority { get; set; }
+		
 	}
 }
 

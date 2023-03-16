@@ -11,7 +11,9 @@ namespace CallManagamentSystem.Domain.Entities
 		public string AuthorityName { get; set; }
 
 		//Relations
-		public virtual ICollection<User> Users { get; set; }
-	}
+		public virtual ICollection<ManagerUser> ManagerUsers { get; set; }
+
+        public virtual ICollection<DeveloperUser> DeveloperUsers { get; set; }
+    }
 }
 

@@ -1,11 +1,15 @@
 ﻿using System;
-namespace CallManagementSystem.Persistance.Repository
+using CallManagamentSystem.Domain.Entities;
+using CallManagementSystem.Application.Repositories;
+using CallManagementSystem.Persistance.Contexts;
+
+namespace CallManagementSystem.Persistance.Repositories
 {
-	public class AuthorityReadRepository : ReadRepository<Authority>, IAuthorityReadRepository
-	{
-		public AuthorityRepository()
-		{
-		}
-	}
+    public class AuthorityReadRepository : ReadRepository<Authority>, IAuthorityReadRepository
+    {
+        public AuthorityReadRepository(CallManagamentSystemDbContext context) : base(context)
+        {
+        }
+    }
 }
 

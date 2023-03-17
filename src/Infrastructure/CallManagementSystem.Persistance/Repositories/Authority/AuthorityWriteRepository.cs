@@ -6,9 +6,9 @@ using CallManagementSystem.Persistance.Repository;
 
 namespace CallManagementSystem.Persistance.Repositories
 {
-    public class ManagerUserWriteRepository : WriteRepository<ManagerUser>, IManagerUserWriteRepository
+    public class AuthorityWriteRepository : WriteRepository<Authority>, IAuthorityWriteRepository
     {
-        public ManagerUserWriteRepository(CallManagamentSystemDbContext context) : base(context)
+        public AuthorityWriteRepository(CallManagamentSystemDbContext context) : base(context)
         {
         }
     }

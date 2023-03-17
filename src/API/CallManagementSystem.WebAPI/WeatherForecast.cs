@@ -1,4 +1,4 @@
-﻿namespace CallManagementSystem.API;
+﻿namespace CallManagementSystem.WebAPI;
 
 public class WeatherForecast
 {

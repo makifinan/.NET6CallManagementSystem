@@ -8,7 +8,9 @@ namespace CallManagementSystem.Persistance.Repositories
 {
     public class DeveloperUserWriteRepository : WriteRepository<DeveloperUser>, IDeveloperUserWriteRepository
     {
-        
+        public DeveloperUserWriteRepository(CallManagamentSystemDbContext context) : base(context)
+        {
+        }
     }
 }
 

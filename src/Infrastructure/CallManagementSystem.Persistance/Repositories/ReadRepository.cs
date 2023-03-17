@@ -26,15 +26,16 @@ namespace CallManagementSystem.Persistance
         {
             return Table.Where(method);
         }
+        public async Task<T> GetSingle(Expression<Func<T, bool>> method)
+        {
+            return await Table.FirstOrDefaultAsync(method);
+        }
         public async Task<T> GetByIdAsync(int id)
         {
             return  await Table.FindAsync(id);
         }
 
-        public async Task<T> GetSingle(Expression<Func<T, bool>> method)
-        {
-            return await Table.FirstOrDefaultAsync(method);
-        }
+        
 
         
     }

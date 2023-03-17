@@ -9,4 +9,31 @@
   <ItemGroup>
     <ProjectReference Include="..\CallManagamentSystem.Domain\CallManagamentSystem.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Repositories\" />
+    <None Remove="Repositories\Notification\" />
+    <None Remove="Repositories\Request\" />
+    <None Remove="Repositories\Statu\" />
+    <None Remove="Repositories\Authority\" />
+    <None Remove="Repositories\DeveloperUser\" />
+    <None Remove="Repositories\ManagerUser\" />
+    <None Remove="Repositories\NotificationType\" />
+    <None Remove="Repositories\Priority\" />
+    <None Remove="Repositories\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+    <Folder Include="Repositories\Notification\" />
+    <Folder Include="Repositories\Request\" />
+    <Folder Include="Repositories\Statu\" />
+    <Folder Include="Repositories\Authority\" />
+    <Folder Include="Repositories\DeveloperUser\" />
+    <Folder Include="Repositories\ManagerUser\" />
+    <Folder Include="Repositories\NotificationType\" />
+    <Folder Include="Repositories\Priority\" />
+    <Folder Include="Repositories\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
+  </ItemGroup>
 </Project>

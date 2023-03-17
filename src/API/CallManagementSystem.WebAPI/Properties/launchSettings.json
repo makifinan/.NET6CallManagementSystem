@@ -4,15 +4,16 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:35505",
+      "applicationUrl": "http://localhost:30312",
       "sslPort": 0
     }
   },
   "profiles": {
-    "CallManagementSystem.API": {
+    "CallManagementSystem.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:9115",
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5233",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

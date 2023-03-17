@@ -19,8 +19,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Contexts\" />
+    <None Remove="Repository\Authority\" />
+    <None Remove="Repository\DeveloperUser\" />
+    <None Remove="Repository\ManagerUser\" />
+    <None Remove="Repository\Priority\" />
+    <None Remove="Repository\Statu\" />
+    <None Remove="Repository\User\" />
+    <None Remove="Repository\Request\" />
+    <None Remove="Repository\NotificationType\" />
+    <None Remove="Repository\Notification\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contexts\" />
+    <Folder Include="Repositories\Authority\" />
+    <Folder Include="Repositories\DeveloperUser\" />
+    <Folder Include="Repositories\ManagerUser\" />
+    <Folder Include="Repositories\Priority\" />
+    <Folder Include="Repositories\Statu\" />
+    <Folder Include="Repositories\User\" />
+    <Folder Include="Repositories\Request\" />
+    <Folder Include="Repositories\NotificationType\" />
+    <Folder Include="Repositories\Notification\" />
   </ItemGroup>
 </Project>

@@ -7,7 +7,8 @@ namespace CallManagamentSystem.Domain.Entities.Common
 		{
 		}
 		public int Id { get; set; }
-		public DateTime GeneretedDate { get; set; }
+		public DateTime GeneratedDate { get; set; }
+
 	}
 }
 

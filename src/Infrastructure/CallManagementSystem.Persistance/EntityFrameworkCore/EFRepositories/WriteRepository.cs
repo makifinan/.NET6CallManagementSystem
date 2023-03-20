@@ -18,33 +18,41 @@ namespace CallManagementSystem.Persistance.Repository
 
         public DbSet<T> Table => _context.Set<T>();
 
+        
+
         public async Task<bool> AddAsync(T entity)
         {
-            EntityEntry<T> entityEntry =await Table.AddAsync(entity);
-            return entityEntry.State == EntityState.Added;
+            EntityEntry<T> entityEntry = await Table.AddAsync(entity);
+            var response = entityEntry.State == EntityState.Added;
+            _context.SaveChangesAsync();
+            return response;
         }
 
         public async Task<bool> AddRangeAsync(List<T> entities)
         {
             await Table.AddRangeAsync(entities);
-            
+            _context.SaveChanges();
             return true;
         }
 
         public bool Remove(T entity)
         {
             EntityEntry<T> entityEntry= Table.Remove(entity);
-            return entityEntry.State == EntityState.Deleted;
+            var response = entityEntry.State == EntityState.Deleted;
+            _context.SaveChanges();
+            return response;
 
         }
 
         public bool Update(T entity)
         {
             EntityEntry<T> entityEntry = Table.Update(entity);
-            return entityEntry.State == EntityState.Modified;
+            var response = entityEntry.State == EntityState.Modified;
+            _context.SaveChanges();
+            return response;
         }
-        public async Task<int> SaveAsync()
-            => await _context.SaveChangesAsync();
+
+        
     }
 }
 

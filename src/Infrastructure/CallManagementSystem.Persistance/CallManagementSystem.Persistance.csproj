@@ -28,17 +28,10 @@
     <None Remove="Repository\Request\" />
     <None Remove="Repository\NotificationType\" />
     <None Remove="Repository\Notification\" />
+    <None Remove="EntityFrameworkCore\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contexts\" />
-    <Folder Include="Repositories\Authority\" />
-    <Folder Include="Repositories\DeveloperUser\" />
-    <Folder Include="Repositories\ManagerUser\" />
-    <Folder Include="Repositories\Priority\" />
-    <Folder Include="Repositories\Statu\" />
-    <Folder Include="Repositories\User\" />
-    <Folder Include="Repositories\Request\" />
-    <Folder Include="Repositories\NotificationType\" />
-    <Folder Include="Repositories\Notification\" />
+    <Folder Include="EntityFrameworkCore\" />
   </ItemGroup>
 </Project>

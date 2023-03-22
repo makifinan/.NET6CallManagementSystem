@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{17414BAF-B620-4072-92A9-5889A29FDC78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallManagamentSystem.Domain", "src\Core\CallManagamentSystem.Domain\CallManagamentSystem.Domain.csproj", "{EC128F95-E71D-43C8-B364-1A67A2EA502A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallManagementSystem.Domain", "src\Core\CallManagamentSystem.Domain\CallManagementSystem.Domain.csproj", "{EC128F95-E71D-43C8-B364-1A67A2EA502A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallManagementSystem.Application", "src\Core\CallManagemntSystem.Application\CallManagementSystem.Application.csproj", "{D7D7004C-A812-4B6D-A92D-DAFEA2369782}"
 EndProject

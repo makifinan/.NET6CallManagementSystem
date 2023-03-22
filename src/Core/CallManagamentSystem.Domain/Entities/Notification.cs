@@ -5,9 +5,7 @@ namespace CallManagamentSystem.Domain.Entities
 {
 	public class Notification : BaseEntity
 	{
-		public Notification()
-		{
-		}
+		
 
 		public string Description { get; set; }
 

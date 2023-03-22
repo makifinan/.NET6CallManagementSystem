@@ -5,9 +5,7 @@ namespace CallManagamentSystem.Domain.Entities
 {
 	public class Priority : BaseEntity
 	{
-		public Priority()
-		{
-		}
+		
 		public string PriorityName { get; set; }
 
 		//Relations

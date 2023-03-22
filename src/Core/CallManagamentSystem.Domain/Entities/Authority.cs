@@ -5,9 +5,7 @@ namespace CallManagamentSystem.Domain.Entities
 {
 	public class Authority : BaseEntity
 	{
-		public Authority()
-		{
-		}
+		
 		public string AuthorityName { get; set; }
 
 		//Relations

@@ -3,12 +3,15 @@ namespace CallManagamentSystem.Domain.Entities.Common
 {
 	public class BaseEntity
 	{
-		public BaseEntity()
-		{
-		}
-		public int Id { get; set; }
-		public DateTime GeneratedDate { get; set; }
+       
 
-	}
+
+        public int Id { get; set; }
+		public DateTime GeneratedDate { get; set ; }
+        public DateTime UpdatedDate { get; set; }
+
+        
+
+    }
 }
 

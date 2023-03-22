@@ -44,11 +44,11 @@ namespace CallManagementSystem.Persistance.Repository
 
         }
 
-        public bool Update(T entity)
+        public async Task<bool> Update(T entity)
         {
             EntityEntry<T> entityEntry = Table.Update(entity);
             var response = entityEntry.State == EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
             return response;
         }
 

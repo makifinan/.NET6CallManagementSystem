@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CallManagamentSystem.Domain\CallManagamentSystem.Domain.csproj" />
+    <ProjectReference Include="..\CallManagamentSystem.Domain\CallManagementSystem.Domain.csproj" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Repositories\" />

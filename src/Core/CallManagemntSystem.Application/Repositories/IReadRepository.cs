@@ -10,9 +10,14 @@ namespace CallManagementSystem.Application.Repositories
 
 		IQueryable<T> GetWhere(Expression<Func<T,bool>>method);
 
-		Task<T> GetSingle(Expression<Func<T,bool>> method);
+		Task<T> GetSingleAsync(Expression<Func<T,bool>> method);
 
 		Task<T> GetByIdAsync(int id);
+
+		//senkron
+		T GetSingle(Expression<Func<T,bool>> filter);
+
+		T GetById(int id);
 	}
 }
 

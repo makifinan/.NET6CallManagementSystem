@@ -3,9 +3,7 @@ namespace CallManagamentSystem.Domain.Entities
 {
 	public class DeveloperUser : User
 	{
-		public DeveloperUser()
-		{
-		}
+		
 
 		//Relations
 		public virtual ICollection<Request> Requests { get; set; }

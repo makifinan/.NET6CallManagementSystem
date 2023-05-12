@@ -4,10 +4,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using CallManagementSystem.Application.Repositories;
 using CallManagementSystem.Persistance.Repositories;
+using System.Reflection;
 
 namespace CallManagementSystem.Persistance
 {
-	public static class ServiceRegistration
+	public static class PersistanceServiceRegistration
 	{
 
 		public static void ServiceRegistrationAdd(this IServiceCollection service)
@@ -40,6 +41,8 @@ namespace CallManagementSystem.Persistance
 
             service.AddScoped<IUserReadRepository, UserReadRepository>();
             service.AddScoped<IUserWriteRepository, UserWriteRepository>();
+
+            
 
         }
 	}

@@ -20,12 +20,12 @@ namespace CallManagementSystem.Persistance.Repository
 
         
 
-        public async Task<bool> AddAsync(T entity)
+        public async Task<T> AddAsync(T entity)
         {
             EntityEntry<T> entityEntry = await Table.AddAsync(entity);
             var response = entityEntry.State == EntityState.Added;
-            _context.SaveChangesAsync();
-            return response;
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<bool> AddRangeAsync(List<T> entities)
@@ -44,15 +44,15 @@ namespace CallManagementSystem.Persistance.Repository
 
         }
 
-        public async Task<bool> Update(T entity)
+        public void Update(T entity)
         {
             EntityEntry<T> entityEntry = Table.Update(entity);
-            var response = entityEntry.State == EntityState.Modified;
-            await _context.SaveChangesAsync();
-            return response;
+            entityEntry.State = EntityState.Modified;
+            _context.SaveChanges();
+            
         }
 
-        
+
     }
 }
 

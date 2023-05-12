@@ -36,6 +36,13 @@ namespace CallManagementSystem.WebAPI.Controllers
             return Ok(response);
         }
 
+        [HttpGet("getbyid")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var response = await _developerUserReadRepository.GetByIdAsync(id);
+            return Ok(response);
+        }
+
     }
 }
 

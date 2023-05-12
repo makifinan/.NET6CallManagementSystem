@@ -20,6 +20,8 @@ namespace CallManagementSystem.Persistance.Contexts
 		public DbSet<Statu> Status { get; set; }
 		public DbSet<DeveloperUser> DeveloperUsers { get; set; }
 		public DbSet<ManagerUser> ManagerUsers { get; set; }
+        public DbSet<Priority> Priorities { get; set; }
+        public DbSet<Authority> Authorities { get; set; }
 
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -33,8 +35,8 @@ namespace CallManagementSystem.Persistance.Contexts
             {
                 _ = data.State switch
                 {
-                    EntityState.Added => data.Entity.GeneratedDate = DateTime.UtcNow,
-                    EntityState.Modified => data.Entity.GeneratedDate = DateTime.UtcNow,
+                    EntityState.Added => data.Entity.GeneratedDate = DateTime.UtcNow.AddHours(3),
+                    EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow.AddHours(3),
                     _ => DateTime.UtcNow
                 };
             }

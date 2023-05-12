@@ -5,44 +5,46 @@ using Microsoft.EntityFrameworkCore;
 using CallManagementSystem.Application.Repositories;
 using CallManagementSystem.Persistance.Repositories;
 using System.Reflection;
+using MediatR;
+using Microsoft.Extensions.Configuration;
 
 namespace CallManagementSystem.Persistance
 {
 	public static class PersistanceServiceRegistration
 	{
 
-		public static void ServiceRegistrationAdd(this IServiceCollection service)
+		public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
 		{
-			service.AddDbContext<CallManagamentSystemDbContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=CallMagamentSystemDbContext;"));
+			services.AddDbContext<CallManagamentSystemDbContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=CallMagamentSystemDbContext;"));
 			
-			service.AddScoped<IStatuReadRepository, StatuReadRepository>();
-			service.AddScoped<IStatuWriteRepository, StatuWriteRepository>();
+			services.AddScoped<IStatuReadRepository, StatuReadRepository>();
+			services.AddScoped<IStatuWriteRepository, StatuWriteRepository>();
 
-			service.AddScoped<IAuthorityReadRepository, AuthorityReadRepository>();
-			service.AddScoped<IAuthorityWriteRepository, AuthorityWriteRepository>();
+			services.AddScoped<IAuthorityReadRepository, AuthorityReadRepository>();
+			services.AddScoped<IAuthorityWriteRepository, AuthorityWriteRepository>();
 
-			service.AddScoped<IDeveloperUserReadRepository, DeveloperUserReadRepository>();
-			service.AddScoped<IDeveloperUserWriteRepository, DeveloperUserWriteRepository>();
+			services.AddScoped<IDeveloperUserReadRepository, DeveloperUserReadRepository>();
+			services.AddScoped<IDeveloperUserWriteRepository, DeveloperUserWriteRepository>();
 
-			service.AddScoped<IManagerUserReadRepository, ManagerUserReadRepository>();
-			service.AddScoped<IManagerUserWriteRepository, ManagerUserWriteRepository>();
+			services.AddScoped<IManagerUserReadRepository, ManagerUserReadRepository>();
+			services.AddScoped<IManagerUserWriteRepository, ManagerUserWriteRepository>();
 
-			service.AddScoped<INotificationReadRepository,NotificationReadRepository>();
-			service.AddScoped<INotificationWriteRepository, NotificationWriteRepository>();
+			services.AddScoped<INotificationReadRepository,NotificationReadRepository>();
+			services.AddScoped<INotificationWriteRepository, NotificationWriteRepository>();
 
-            service.AddScoped<INotificationTypeReadRepository, NotificationTypeReadRepository>();
-            service.AddScoped<INotificationTypeWriteRepository, NotificationTypeWriteRepository>();
+            services.AddScoped<INotificationTypeReadRepository, NotificationTypeReadRepository>();
+            services.AddScoped<INotificationTypeWriteRepository, NotificationTypeWriteRepository>();
 
-            service.AddScoped<IPriorityReadRepository, PriorityReadRepository>();
-            service.AddScoped<IPriorityWriteRepository, PriorityWriteRepository>();
+            services.AddScoped<IPriorityReadRepository, PriorityReadRepository>();
+            services.AddScoped<IPriorityWriteRepository, PriorityWriteRepository>();
 
-            service.AddScoped<IRequestReadRepository, RequestReadRepository>();
-            service.AddScoped<IRequestWriteRepository, RequestWriteRepository>();
+            services.AddScoped<IRequestReadRepository, RequestReadRepository>();
+            services.AddScoped<IRequestWriteRepository, RequestWriteRepository>();
 
-            service.AddScoped<IUserReadRepository, UserReadRepository>();
-            service.AddScoped<IUserWriteRepository, UserWriteRepository>();
+            services.AddScoped<IUserReadRepository, UserReadRepository>();
+            services.AddScoped<IUserWriteRepository, UserWriteRepository>();
 
-            
+			return services;
 
         }
 	}

@@ -8,6 +8,7 @@ namespace CallManagamentSystem.Domain.Entities
 		
 		public string Description { get; set; }
 		public string EndDate { get; set; }
+		public string Title { get; set; }
 
 		//Relations
 		public int ManagerUserId { get; set; }

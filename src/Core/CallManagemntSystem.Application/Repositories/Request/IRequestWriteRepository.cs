@@ -5,6 +5,9 @@ namespace CallManagementSystem.Application.Repositories
 {
 	public interface IRequestWriteRepository : IWriteRepository<Request>
 	{
+
+		void UpdateRequest(Request request);
+
 	}
 }
 

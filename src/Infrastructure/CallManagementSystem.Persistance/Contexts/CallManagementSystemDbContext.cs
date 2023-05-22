@@ -28,17 +28,22 @@ namespace CallManagementSystem.Persistance.Contexts
         {
             //ChangeTracker : Entityler üzerinden yapılan değişiklerin ya da yeni eklenen verinin yakalanmasını sağlayan propertydir. Update operasyonlarında Track edilen verileri yakalayıp elde etmemizi sağlar.
 
-            var datas = ChangeTracker
-                 .Entries<BaseEntity>();
+            var addedEntities = ChangeTracker
+        .Entries<BaseEntity>()
+        .Where(e => e.State == EntityState.Added);
 
-            foreach (var data in datas)
+            foreach (var entityEntry in addedEntities)
             {
-                _ = data.State switch
-                {
-                    EntityState.Added => data.Entity.GeneratedDate = DateTime.UtcNow.AddHours(3),
-                    EntityState.Modified => data.Entity.UpdatedDate = DateTime.UtcNow.AddHours(3),
-                    _ => DateTime.UtcNow
-                };
+                entityEntry.Property("GeneratedDate").CurrentValue = DateTime.UtcNow.AddHours(3);
+            }
+
+            var modifiedEntities = ChangeTracker
+                .Entries<BaseEntity>()
+                .Where(e => e.State == EntityState.Modified);
+
+            foreach (var entityEntry in modifiedEntities)
+            {
+                entityEntry.Property("GeneratedDate").IsModified = false; // GeneratedDate güncellenmeyecek
             }
 
             return await base.SaveChangesAsync(cancellationToken);

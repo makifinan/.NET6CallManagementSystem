@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using CallManagamentSystem.Domain.Entities;
 using CallManagementSystem.Application.Features.Requests.Commands.CreateRequest;
 using CallManagementSystem.Application.Features.Requests.Dtos;
@@ -83,15 +84,22 @@ namespace CallManagementSystem.WebAPI.Controllers
 
         }
 
+        /*
         [HttpPost("update")]
         public IActionResult Update(Request request)
         {
             _requestWriteRepository.Update(request);
 
             return Ok();
+        }*/
+        [HttpPost("update")]
+        public IActionResult Update(Request request)
+        {
+ 
+            _requestWriteRepository.UpdateRequest(request);
+
+            return Ok();
         }
-
-
 
 
 

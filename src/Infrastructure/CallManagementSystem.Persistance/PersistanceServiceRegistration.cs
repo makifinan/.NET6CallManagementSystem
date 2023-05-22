@@ -15,7 +15,7 @@ namespace CallManagementSystem.Persistance
 
 		public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
 		{
-			services.AddDbContext<CallManagamentSystemDbContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=CallMagamentSystemDbContext;"));
+			services.AddDbContext<CallManagamentSystemDbContext>(options => options.UseNpgsql("User ID=postgres;Password=123456;Host=localhost;Port=5432;Database=CallMagamentSystemDbContext;Include Error Detail=true;"));
 			
 			services.AddScoped<IStatuReadRepository, StatuReadRepository>();
 			services.AddScoped<IStatuWriteRepository, StatuWriteRepository>();

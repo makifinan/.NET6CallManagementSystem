@@ -23,7 +23,7 @@ namespace CallManagamentSystem.Domain.Entities
 		public int StatuId { get; set; }
 		public virtual Statu Statu { get; set; }
 
-
-	}
+        
+    }
 }
 
